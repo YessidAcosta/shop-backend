@@ -102,10 +102,10 @@ WSGI_APPLICATION = 'shopProject.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'shop-mintic-i3',
-        'USER': 'postgres',
-        'PASSWORD': 'postgres',
-        'HOST': 'localhost',
+        'NAME': 'dr76q8usrd6au',
+        'USER': 'vpcfrqsoqdhrwj',
+        'PASSWORD': '5119fa44ff6750ada914e51d12ceaf516fd8fa72fc2cdb2b5f4db3460a607302',
+        'HOST': 'ec2-3-217-216-13.compute-1.amazonaws.com',
         'PORT': '5432',
     }
 }
