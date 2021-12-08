@@ -6,6 +6,7 @@ from rest_framework.permissions import IsAuthenticated
 
 from shopApp.models.user import User
 from shopApp.serializers.userSerializer import UserSerializer
+from shopApp.serializers.userUpdateSerializer import UserUpdateSerializer
 
 class UserDetailView(generics.RetrieveAPIView):
     queryset = User.objects.all()
@@ -23,3 +24,23 @@ class UserDetailView(generics.RetrieveAPIView):
             return Response(stringResponse, status=status.HTTP_401_UNAUTHORIZED)
         
         return super().get(request, *args, **kwargs)
+    
+    def put(self, request, *args, **kwargs):
+        user = User.objects.filter(id=kwargs['pk']).first()
+        user_serializer = UserUpdateSerializer(user, data=request.data)
+
+        if (user):
+            if (user_serializer.is_valid()):
+                user_serializer.save()
+                return Response({'message': 'updated user'} , status=status.HTTP_200_OK)
+            else:
+                return Response(user_serializer.errors , status=status.HTTP_400_BAD_REQUEST)
+        return Response({'message': 'user not found'} , status=status.HTTP_404_NOT_FOUND)
+
+    def delete(self, request, *args, **kwargs):
+        user = User.objects.filter(id=kwargs['pk']).first()
+        
+        if (user):
+            user.delete()
+            return Response({'message': 'user removed'} , status=status.HTTP_200_OK)
+        return Response({'message': 'user not found'} , status=status.HTTP_404_NOT_FOUND)

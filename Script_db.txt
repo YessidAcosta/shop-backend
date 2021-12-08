@@ -1,0 +1,166 @@
+--=====================================================================================================
+--=====================================================================================================
+--					CREACION DE TABLAS
+--=====================================================================================================
+--=====================================================================================================
+create table product (
+	id serial,
+	description varchar NOT NULL,
+	price numeric NOT NULL,
+	inventory integer NOT NULL,
+	CONSTRAIN key_id_product PRIMARY KEY (id)
+);
+
+create table bill (
+	id serial,
+	bill_date datatime NOT NULL,
+	total numeric NOT NULL,
+	CONSTRAIN key_id_bill PRIMARY KEY (id)
+);
+
+create table sale (
+	id serial,
+	id_product integer NOT NULL,
+	id_bill integer NOT NULL,
+	quantity integer NOT NULL,
+	CONSTRAIN key_id_sale PRIMARY KEY (id),
+	CONSTRAIN fkey_id_product FOREIGN KEY (id) REFERENCES product,
+	CONSTRAIN fkey_id_bill FOREIGN KEY (id) REFERENCES bill
+);
+--=====================================================================================================
+--=====================================================================================================
+--					INSERCION DE DATOS
+--=====================================================================================================
+--=====================================================================================================
+
+					USER
+
+INSERT INTO public."shopApp_user"
+(username, "password", "name", email, "type")
+VALUES('Yessid Acosta', 'yessidbryan@gmail.com', 'Manager');
+
+INSERT INTO public."shopApp_user"
+(username, "password", "name", email, "type")
+VALUES('Brian Mosquera', 'bryanacosta@emssanar.org.co', 'Administrator');
+
+INSERT INTO public."shopApp_user"
+(username, "password", "name", email, "type")
+VALUES('Pepito Perez', 'pepito@gmail.com', 'Seller');
+
+					PRODUCT
+
+INSERT INTO public."shopApp_product"
+(description, price, inventory)
+VALUES('Milk', 3500, 50);
+
+INSERT INTO public."shopApp_product"
+(description, price, inventory)
+VALUES('Eggs', 400, 500);
+
+INSERT INTO public."shopApp_product"
+(description, price, inventory)
+VALUES('Rice', 2000, 20);
+
+INSERT INTO public."shopApp_product"
+(description, price, inventory)
+VALUES('Bread', 200, 80);
+
+
+					BILL
+
+INSERT INTO public."shopApp_bill"
+(bill_date, total)
+VALUES('2021-12-01T12:00:00.511Z', 7500);
+
+INSERT INTO public."shopApp_bill"
+(bill_date, total)
+VALUES('2021-12-02T12:00:00.511Z', 12000);
+
+INSERT INTO public."shopApp_bill"
+(bill_date, total)
+VALUES('2021-12-03T12:00:00.511Z', 5000);
+
+INSERT INTO public."shopApp_bill"
+(bill_date, total)
+VALUES('2021-12-05T12:00:00.511Z', 10000);
+
+INSERT INTO public."shopApp_bill"
+(bill_date, total)
+VALUES('2021-12-05T12:00:00.511Z', 6000);
+
+					SALE
+
+INSERT INTO public."shopApp_sale"
+(bill_id, product_id,quantity)
+VALUES(1,1,1);
+
+INSERT INTO public."shopApp_sale"
+(bill_id, product_id,quantity)
+VALUES(1,2,5);
+
+INSERT INTO public."shopApp_sale"
+(bill_id, product_id,quantity)
+VALUES(1,3,1);
+
+
+
+INSERT INTO public."shopApp_sale"
+(bill_id, product_id,quantity)
+VALUES(2,1,2);
+
+INSERT INTO public."shopApp_sale"
+(bill_id, product_id,quantity)
+VALUES(2,2,5);
+
+INSERT INTO public."shopApp_sale"
+(bill_id, product_id,quantity)
+VALUES(2,3,1);
+
+INSERT INTO public."shopApp_sale"
+(bill_id, product_id,quantity)
+VALUES(2,4,5);
+
+
+
+INSERT INTO public."shopApp_sale"
+(bill_id, product_id,quantity)
+VALUES(3,2,5);
+
+INSERT INTO public."shopApp_sale"
+(bill_id, product_id,quantity)
+VALUES(3,3,1);
+
+INSERT INTO public."shopApp_sale"
+(bill_id, product_id,quantity)
+VALUES(3,4,5);
+
+
+
+INSERT INTO public."shopApp_sale"
+(bill_id, product_id,quantity)
+VALUES(4,1,2);
+
+INSERT INTO public."shopApp_sale"
+(bill_id, product_id,quantity)
+VALUES(4,2,5);
+
+INSERT INTO public."shopApp_sale"
+(bill_id, product_id,quantity)
+VALUES(4,4,5);
+
+
+
+INSERT INTO public."shopApp_sale"
+(bill_id, product_id,quantity)
+VALUES(5,2,3);
+
+
+max = Bill.objects.all().aggregate(max('id'))['id_max']
+
+
+
+
+
+
+
+

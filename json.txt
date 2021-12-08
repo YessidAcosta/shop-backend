@@ -1,0 +1,169 @@
+					Modelo de Usuario
+
+{
+    "username": "yessid",
+    "password": "seguridad",
+    "name": "Yessid Acosta",
+    "email": "yessidbryan@gmail.com",
+    "type": "Manager"
+},
+{
+    "username": "brian",
+    "password": "seguridad",
+    "name": "Brian Mosquera",
+    "email": "bryanacosta@emssanar.org.co",
+    "type": "Administrator"
+},
+{
+    "username": "pepito",
+    "password": "seguridad",
+    "name": "Pepito Perez",
+    "email": "pepito@gmail.com",
+    "type": "Seller"
+},
+{
+    "username": "pepito2",
+    "password": "seguridad",
+    "name": "Pepito Perez2",
+    "email": "pepito@gmail.com",
+    "type": "Seller"
+}
+
+
+					Modelo de Producto
+
+{
+    "description": "Milk",
+    "price": 3500,
+    "inventory": 50
+},
+{
+    "description": "Eggs",
+    "price": 400,
+    "inventory": 500
+},
+{
+    "description": "Rice",
+    "price": 2000,
+    "inventory": 20
+},
+{
+    "description": "Bread",
+    "price": 200,
+    "inventory": 80
+},
+{
+    "description": "Patato",
+    "price": 500,
+    "inventory": 30
+}
+
+
+					Modelo de Bill
+
+{
+    "bill_date": "2021-12-01T12:00:00.511Z",
+    "total": 7000		
+},
+{
+    "bill_date": "2021-12-02T13:00:00.511Z",
+    "total": 12000
+},
+{
+    "bill_date": "2021-12-03T14:00:00.511Z",
+    "total": 5000
+},
+{
+    "bill_date": "2021-12-04T15:00:00.511Z",
+    "total": 10000
+},
+{
+    "bill_date": "2021-12-05T15:00:00.511Z",
+    "total": 6000
+},
+{
+    "bill_date": "2021-12-06T15:00:00.511Z",
+    "total": 1000
+}
+
+					Modelo de Sale
+
+{
+    "bill": 1,
+    "product": 1,
+    "quantity": 1
+},
+{
+    "bill": 1,
+    "product": 2,
+    "quantity": 5
+},
+{
+    "bill": 1,
+    "product": 3,
+    "quantity": 1
+}
+
+
+{
+    "bill": 2,
+    "product": 1,
+    "quantity": 2
+},
+{
+    "bill": 2,
+    "product": 2,
+    "quantity": 5
+},
+{
+    "bill": 2,
+    "product": 3,
+    "quantity": 1
+},
+{
+    "bill": 2,
+    "product": 4,
+    "quantity": 5
+}
+
+
+{
+    "bill": 3,
+    "product": 2,
+    "quantity": 5
+},
+{
+    "bill": 3,
+    "product": 3,
+    "quantity": 1
+},
+{
+    "bill": 3,
+    "product": 4,
+    "quantity": 5
+}
+
+
+{
+    "bill": 4,
+    "product": 1,
+    "quantity": 2
+},
+{
+    "bill": 4,
+    "product": 2,
+    "quantity": 5
+},
+{
+    "bill": 4,
+    "product": 4,
+    "quantity": 5
+}
+
+
+{
+    "bill": 5,
+    "product": 2,
+    "quantity": 3
+}
+
